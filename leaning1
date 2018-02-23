@@ -6,12 +6,12 @@ class Solution:
         :rtype: List[int]
         """
         flag=True
-        for x in nums:
-            for y in nums:
-                if (nums.index(x)!=nums.index(y)) and (x+y-target==0):
-                    print('Because {} + {} = {}'.format(x,y,target))
-                    return([nums.index(x),nums.index(y)])
+        for x in range(len(nums)):
+            for y in range(len(nums)):
+                if (x!=y) and (nums[x]+nums[y]-target==0):
+                    return([x,y])
                     flag=False
+                    break
                 else:
                     pass
         if flag==True:
